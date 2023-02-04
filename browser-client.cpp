@@ -206,7 +206,7 @@ bool BrowserClient::OnProcessMessageReceived(
 		if (name == "getScenes") {
 			struct obs_frontend_source_list list = {};
 			obs_frontend_get_scenes(&list);
-			std::vector<const char *> scenes_vector;
+			std::vector<Json> scenes_vector;
 			for (size_t i = 0; i < list.sources.num; i++) {
 				obs_source_t *source = list.sources.array[i];
 				scenes_vector.push_back(
@@ -234,7 +234,7 @@ bool BrowserClient::OnProcessMessageReceived(
 		} else if (name == "getTransitions") {
 			struct obs_frontend_source_list list = {};
 			obs_frontend_get_transitions(&list);
-			std::vector<const char *> transitions_vector;
+			std::vector<Json> transitions_vector;
 			for (size_t i = 0; i < list.sources.num; i++) {
 				obs_source_t *source = list.sources.array[i];
 				transitions_vector.push_back(

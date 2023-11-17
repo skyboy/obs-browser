@@ -644,7 +644,10 @@ static void handle_obs_frontend_event(enum obs_frontend_event event, void *)
 		if (!name)
 			break;
 
-		DispatchJSEvent("obsTransitionChanged", name);
+		Json json = Json::object{
+			{"name", name}};
+
+		DispatchJSEvent("obsTransitionChanged", json.dump());
 		break;
 	}
 	case OBS_FRONTEND_EVENT_TRANSITION_LIST_CHANGED: {

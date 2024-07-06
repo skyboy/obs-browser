@@ -74,7 +74,7 @@ endif()
 mark_as_advanced(ENABLE_BROWSER_LEGACY ENABLE_BROWSER_SHARED_TEXTURE
                  ENABLE_BROWSER_PANELS ENABLE_BROWSER_QT_LOOP)
 
-find_package(CEF REQUIRED 95)
+find_package(CEF REQUIRED 109)
 
 if(NOT TARGET CEF::Wrapper)
   message(
